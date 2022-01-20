@@ -7,7 +7,7 @@ const session = require("express-session")
 //inisialisasi express
 const app = express() 
 
-const PORT = 4000
+const port = proccess.env.PORT || 4000
 
 const db = require("./connection/db")
 
@@ -342,6 +342,6 @@ app.get("/blog-detail/:id", function(request, response) {
     })
 })
 
-app.listen(PORT, function() {
-    console.log("Server starting on PORT 4000");
+app.listen(port, function() {
+    console.log(`Server starting on PORT ${port}`);
 })
