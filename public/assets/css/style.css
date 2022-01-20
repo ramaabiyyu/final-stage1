@@ -1,0 +1,54 @@
+.bg-orange {
+    background-color: orangered;
+}
+
+.text-orange {
+    color: orangered !important;
+}
+
+.card-img-top{
+    border-radius: 25px;
+}
+
+.card ul{
+    margin-left: 50px;
+}
+
+.card ul li{
+    display: inline;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.card table{
+    margin-top: 15px; 
+    border: 1px solid black;
+    width:100%; 
+    text-align: center; 
+    border-collapse:collapse;
+}
+
+.card table th{
+    border: 1px solid black;
+}
+
+.card table td{
+    border: 1px solid black;
+    font-size: 13px;
+}
+
+.navbar {
+    height: 10vh;
+}
+
+.container-fluid {
+    height: 90vh;
+}
+
+.container-form {
+    width: 500px;
+    box-shadow: 0px 0px 10px;
+    padding: 30px;
+    margin-top: 30px;
+}

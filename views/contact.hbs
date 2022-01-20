@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Contact Form
+        </title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> 
+        <link rel="stylesheet" href="../public/assets/css/style.css" />
+        <link rel="stylesheet" href="../public/assets/css/form-style.css"/>        
+    </head>
+    <body>
+        
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="/"><img src="../public/assets/images/logo.png" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="margin-left: 30px;">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/blog">Blog</a>
+                    </li>
+                </ul>
+                {{#if isLogin}}
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="margin-left: 30px;">
+                    <li class="nav-item">
+                        <span class="nav-link active" aria-current="page">Halo, {{user.name}}!</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/logout">Logout</a>
+                    </li>
+                </ul>
+
+                {{else}}
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="margin-left: 30px;">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/register">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/login">Login</a>
+                    </li>
+                </ul>
+                {{/if}}
+                               
+                <a class="btn text-white bg-orange ms-5 px-3" href="/contact">Contact Me</a>
+            </div>
+        </div>
+    </nav>
+        
+        <form>
+            <h1>Contact Form</h1>
+            <div>
+                <label for="input-name">Name</label>
+                <br>    
+                <input  id="input-name" 
+                        type="text" 
+                        placeholder="input name"
+                        />
+            </div>
+            <div>    
+                <label for="input-number">Phone Number</label>
+                <br>
+                <input  id="input-number" 
+                        type="number" 
+                        placeholder="input nomor"
+                        />
+            </div>
+            <div>
+                <label for="input-email">Email</label>
+                <br>    
+                <input  id="input-email" 
+                        type="email" 
+                        placeholder="input email"
+                        />
+            </div>
+            <div>
+                
+                <label for="input-status">Status</label>
+                <br>
+                <select id="input-status">
+                    <option value="">Select Status</option>
+                    <option>It's Working</option>
+                    <option>It's not Working</option>
+                    <option>It's not completed yet</option>
+                    <option>There is an Undidentified Error</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="input-messages">Your Messages</label>
+                <br>
+                <textarea id="input-messages" cols="50" rows="10" maxlength="100" placeholder="input Pesan"></textarea>
+            </div>
+            <div class="checkbox1">
+                <input type="checkbox" id="aggreement1" value="Saya telah baca">
+                <p>Saya telah membaca <a href="#"><b>syarat dan ketentuan</b></a> yang berlaku.<p>
+            </div>
+
+            <div class="checkbox2">
+                <input type="checkbox" id="aggreement2" value="dan saya setuju">
+                <p>Saya menyetujui syarat dan ketentuan yang berlaku<p>
+            </div>
+            
+
+            <button type="button"
+                    onclick="submitData()"
+                    ><b>Submit</b>
+            </button>
+        </form>
+        <script src="form.js"></script>
+    </body>
+</html>
